@@ -1,0 +1,19 @@
+public class ABoardGame {
+	public static void main(String[] args) {
+
+	}
+
+	public static String whoWins(String[] board) {
+
+	}
+
+	private static int iterateRegions(String[] board) {
+		int regions = board.length  
+	}
+
+	// regionNum -- number of nth region.
+	// index -- location of first index of nth region. 
+	private static int traverseRegion(String[] board, int regionNum, int index) {
+
+	}
+}

@@ -1,0 +1,45 @@
+public class Substitute {
+    
+    String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+    
+    
+    boolean keyValid(String key) {
+        int[] marked = new int[alpha.length()];
+        if (key.length() != 10) return false;
+        for (int i = 0; i < key.length(); i++) {
+            int index = alpha.indexOf(key.charAt(i));
+            if (index == -1) return false;
+            marked[index]++;
+        }
+        for (int i = 0; i < alpha.length(); i++) {
+            if (marked[i] > 1) return false;
+        }
+    	return true;
+    }
+    
+    boolean codeValid(String key, String code) {
+        if (code.length() < 1 || code.length() > 9) return false;
+    	return true;
+    }
+    
+    int getValue(String key, String code) {
+        String res = "";
+        for (int i = 0; i < code.length(); i++) {
+            int num = key.indexOf(code.charAt(i)) + 1;
+            if (num == 0) continue;
+            if (num >= key.length()) num = 0;
+            res += Integer.toString(num);
+        }            
+    	return Integer.parseInt(res);
+    }
+
+    public static void main(String[] args) {
+
+        Substitute sub = new Substitute();
+
+        System.out.println(sub.getValue("TRADINGFEW", "LGXWEV"));
+        System.out.println(sub.getValue("ABCDEFGHIJ", "XJ"));
+        System.out.println(sub.getValue("CRYSTALBUM", "MMA"));
+    }
+}
