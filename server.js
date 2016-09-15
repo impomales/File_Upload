@@ -6,8 +6,8 @@ var upload = multer({dest: 'uploads/'})
 
 app.use(express.static(path.join(__dirname, '/static')))
 
-app.get('/', function(req, res) {
-    res.send('hello world...')
+app.post('/upload', function(req, res) {
+    console.log('something something')
 })
 
 var server = app.listen(process.env.PORT || 8080, function() {

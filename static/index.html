@@ -5,6 +5,16 @@
         <title>File Upload Microservice</title>
     </head>
     <body>
-        <h1>Hello World...</h1>
+        <h1>File Upload Microservice</h1>
+        <form name='uploadFile' action='' method='post' enctype='multipart/form-data'>
+            <input type='file' name='file'>
+            <input type='submit' value='upload'>
+        </form>
+        <script type='text/javascript'>
+            window.onload = function() {
+                var url = document.URL
+                document.uploadFile.action = url + 'upload'
+            }
+        </script>
     </body>
 </html>
